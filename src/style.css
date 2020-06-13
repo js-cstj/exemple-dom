@@ -69,4 +69,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+table.feux {
+  display: inline-table;
+}
+
+table.feux div {
+  --hue: 0;
+  border-radius: 100%;
+  width: 3em;
+  height: 3em;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+table.feux div.allume {
+  background-color: hsl(var(--hue), 100%, 60%);
+  -webkit-box-shadow: 0 0 2em hsl(var(--hue), 100%, 50%);
+          box-shadow: 0 0 2em hsl(var(--hue), 100%, 50%);
+}
 /*# sourceMappingURL=style.css.map */
