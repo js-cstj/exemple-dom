@@ -39,4 +39,32 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
+figure.polaroid {
+	font-family: 'Rock Salt', cursive;
+	color: darkblue;
+	border: 12px solid black;
+	border-image: url(../images/cadre_ondulation.svg) round;
+	border-image-slice: 24;
+	border-image-repeat: round;
+	padding: 1em;
+	figcaption {
+		text-align: center;
+		height: 3em;
+	}
+}
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+figure.vagues {
+	font-family: 'Petit Formal Script', cursive;
+	border: 10px solid black;
+	border-image: url(../images/cadre_vagues.svg) round;
+	border-image-slice: 10;
+	border-image-repeat: round;
+	padding: 1em;
+	padding-bottom: 0;
+	figcaption {
+		text-align: center;
+	}
+}

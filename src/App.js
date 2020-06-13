@@ -8,7 +8,19 @@ export default class App {
 	 */
 	static main() {
 		console.log("Je suis prêt");
-		document.getElementById("app").innerHTML = "La page est chargée";
+		document.getElementById("app").appendChild(this.html_figure());
+	}
+	static html_figure() {
+		var resultat = document.createElement("figure");
+		resultat.classList.add("polaroid");
+		var img = document.createElement("img");
+		resultat.appendChild(img);
+		img.setAttribute("src", "https://pbs.twimg.com/profile_images/741257953332891648/3xFijf2U.jpg");
+		var figcaption = document.createElement("figcaption");
+		resultat.appendChild(figcaption);
+		figcaption.innerHTML = "Photo de mon chat";
+
+		return resultat;
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal

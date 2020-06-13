@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
 html {
   height: 100%;
   font-size: 16px;
@@ -68,5 +70,36 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+figure.polaroid {
+  font-family: 'Rock Salt', cursive;
+  color: darkblue;
+  border: 12px solid black;
+  -o-border-image: url(../images/cadre_ondulation.svg) round;
+     border-image: url(../images/cadre_ondulation.svg) round;
+  border-image-slice: 24;
+  border-image-repeat: round;
+  padding: 1em;
+}
+
+figure.polaroid figcaption {
+  text-align: center;
+  height: 3em;
+}
+
+figure.vagues {
+  font-family: 'Petit Formal Script', cursive;
+  border: 10px solid black;
+  -o-border-image: url(../images/cadre_vagues.svg) round;
+     border-image: url(../images/cadre_vagues.svg) round;
+  border-image-slice: 10;
+  border-image-repeat: round;
+  padding: 1em;
+  padding-bottom: 0;
+}
+
+figure.vagues figcaption {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
