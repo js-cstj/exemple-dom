@@ -10,6 +10,16 @@ export default class App {
 	static main() {
 		console.log("Je suis prêt");
 		document.getElementById("app").appendChild(this.html_feuxCirculation());
+		this.clignoter();
+	}
+	static clignoter() {
+		var feux = document.querySelectorAll(".feux div");
+		window.setInterval(() => {
+			feux.forEach(feu => {
+				feu.classList.toggle("allume", Math.random() < 0.5);
+			})
+		}, 500);
+
 	}
 	static html_feuxCirculation() {
 		var resultat = document.createElement("table");
