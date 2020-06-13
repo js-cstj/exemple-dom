@@ -14,25 +14,31 @@ export default class App {
 	static html_feuxCirculation() {
 		var resultat = document.createElement("table");
 		resultat.style.borderSpacing = "1em";
-		resultat.style.backgroundColor = "#333";
+		resultat.style.backgroundColor = "hsl(0, 0%, 20%)";
 		var tbody = resultat.appendChild(document.createElement("tbody"));
 		var tr = tbody.appendChild(document.createElement("tr"));
 		var td = tr.appendChild(document.createElement("td"));
-		td.appendChild(this.html_feu("hsl(0, 100%, 50%)"));
+		td.appendChild(this.html_feu(0));
 		var tr = tbody.appendChild(document.createElement("tr"));
 		var td = tr.appendChild(document.createElement("td"));
-		td.appendChild(this.html_feu("hsl(60, 100%, 50%)"));
+		td.appendChild(this.html_feu(60));
 		var tr = tbody.appendChild(document.createElement("tr"));
 		var td = tr.appendChild(document.createElement("td"));
-		td.appendChild(this.html_feu("hsl(120, 100%, 50%)"));
+		td.appendChild(this.html_feu(120, true));
 		return resultat;
 	}
-	static html_feu(couleur) {
+	static html_feu(hue, allume=false) {
 		var div = document.createElement("div");
 		div.style.borderRadius = "100%";
 		div.style.width = "3em";
 		div.style.height = "3em";
-		div.style.backgroundColor = couleur;
+		if (allume) {
+			div.style.backgroundColor = "hsl("+hue+", 100%, 50%)";
+			div.style.boxShadow = "0 0 2em hsl("+hue+", 100%, 50%)";
+		} else {
+			div.style.backgroundColor = "hsl("+hue+", 100%, 20%)";
+		}
+		
 		return div;
 	}
 	/**
