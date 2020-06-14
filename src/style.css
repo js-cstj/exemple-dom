@@ -69,4 +69,32 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+form {
+  border: 5px double black;
+  padding: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 10em;
+      grid-template-columns: auto 10em;
+}
+
+form div {
+  display: contents;
+}
+
+form label {
+  text-align: right;
+  margin-right: 1ch;
+}
+
+form label::after {
+  content: " : ";
+}
+
+form input[type=submit] {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: -1;
+}
 /*# sourceMappingURL=style.css.map */

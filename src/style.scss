@@ -40,3 +40,24 @@ body {
 	align-items: center;
 }
 
+
+form {
+	border: 5px double black;
+	padding: 1em;
+	display: grid;
+	grid-template-columns: auto 10em;
+	div {
+		display: contents;
+	}
+	label {
+		text-align: right;
+		margin-right: 1ch;
+		&::after {
+			content: " : ";
+		}
+	}
+	input[type=submit] {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+}
