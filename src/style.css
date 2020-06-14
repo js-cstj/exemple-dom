@@ -69,4 +69,41 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+nav.principal {
+  background-color: darkcyan;
+  color: #eff;
+}
+
+nav.principal a {
+  color: inherit;
+  text-decoration: none;
+  display: -ms-grid;
+  display: grid;
+  height: 2em;
+  width: 9em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+nav.principal ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  padding: .5em;
+  grid-auto-flow: column;
+}
+
+nav.principal ul li {
+  border-radius: .15em;
+}
+
+nav.principal ul li:hover {
+  background-color: #0002;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
