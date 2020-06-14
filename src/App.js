@@ -8,17 +8,28 @@ export default class App {
 	 */
 	static main() {
 		console.log("Je suis prêt");
-		document.getElementById("app").appendChild(this.html_select());
-		document.getElementById("app").appendChild(this.html_radiogroup());
+		var taillesPizza = {
+			s: "Small",
+			m: "Medium",
+			l: "Large",
+			xl: "Extra Large",
+			j: "Jumbo",
+		};
+		var croutesPizza = {
+			r: "Régulière",
+			m: "Mince",
+			p: "Pan",
+			f: "Farcie",
+		}
+		document.getElementById("app").appendChild(this.html_select(taillesPizza));
+		document.getElementById("app").appendChild(this.html_radiogroup(croutesPizza));
 	}
-	static html_select() {
+	static html_select(elements) {
 		var select = document.createElement("select");
 		select.setAttribute("name", "taille");
-		select.appendChild(this.html_option("xs", "Extra Small"));
-		select.appendChild(this.html_option("s", "Small"));
-		select.appendChild(this.html_option("m", "Medium"));
-		select.appendChild(this.html_option("l", "Large"));
-		select.appendChild(this.html_option("xl", "Extra Large"));
+		for (let value in elements) {
+			select.appendChild(this.html_option(value, elements[value]));
+		}
 		return select;
 	}
 	static html_option(value, text) {
@@ -27,25 +38,24 @@ export default class App {
 		option.innerHTML = text;
 		return option;
 	}
-	static html_radiogroup() {
+	static html_radiogroup(elements) {
 		var fieldset = document.createElement("fieldset");
 		fieldset.setAttribute("name", "taille");
-		fieldset.appendChild(this.html_radio("xs", "Extra Small"));
-		fieldset.appendChild(this.html_radio("s", "Small"));
-		fieldset.appendChild(this.html_radio("m", "Medium"));
-		fieldset.appendChild(this.html_radio("l", "Large"));
-		fieldset.appendChild(this.html_radio("xl", "Extra Large"));		
+		for (let value in elements) {
+			fieldset.appendChild(this.html_radio(value, elements[value]));
+		}
 		return fieldset;
 	}
 	static html_radio(value, text) {
-		var label = document.createElement("label");
+		var resultat = document.createElement("div");
+		var label = resultat.appendChild(document.createElement("label"));
 		var input = label.appendChild(document.createElement("input"));
 		input.setAttribute("type", "radio");
 		input.setAttribute("name", "taille");
 		input.setAttribute("id", "taille");
 		input.setAttribute("value", value);
 		label.appendChild(document.createTextNode(text));
-		return label;
+		return resultat;
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal
