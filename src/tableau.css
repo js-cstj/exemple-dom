@@ -1,11 +1,13 @@
 table.stats {
-  --theme-hue: 30;
+  --hue: 195;
+  --sat: 53%;
+  --sat: 100%;
   border-collapse: collapse;
-  background-color: hsl(var(--theme-hue), 53%, 79%);
+  background-color: hsl(var(--hue), var(--sat), 79%);
 }
 
 table.stats, table.stats thead, table.stats tfoot {
-  border: 2px solid hsl(var(--theme-hue), 53%, 27%);
+  border: 2px solid hsl(var(--hue), var(--sat), 27%);
 }
 
 table.stats th, table.stats td {
@@ -21,8 +23,8 @@ table.stats tbody > tr:nth-child(3n+1) {
 }
 
 table.stats thead {
-  background-color: hsl(var(--theme-hue), 53%, 27%);
-  color: hsl(var(--theme-hue), 53%, 94%);
+  background-color: hsl(var(--hue), var(--sat), 27%);
+  color: hsl(var(--hue), var(--sat), 94%);
   font-size: smaller;
 }
 

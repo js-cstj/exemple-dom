@@ -1,14 +1,16 @@
 
 table.stats {
-	--theme-hue: 30;
+	--hue: 195;
+	--sat: 53%;
+	--sat: 100%;
 	border-collapse: collapse;
-	background-color: hsl(var(--theme-hue), 53%, 79%);
+	background-color: hsl(var(--hue), var(--sat), 79%);
 	&, thead , tfoot {
-		border: 2px solid hsl(var(--theme-hue), 53%, 27%);
+		border: 2px solid hsl(var(--hue), var(--sat), 27%);
 	}
 	th, td {
 		padding: .25em 1ch;
-		// border: 1px solid hsl(var(--theme-hue), 53%, 27%);
+		// border: 1px solid hsl(var(--hue), var(--sat), 27%);
 	}
 	tbody {
 		& > tr:nth-child(3n) {
@@ -19,8 +21,8 @@ table.stats {
 		}
 	}
 	thead {
-		background-color: hsl(var(--theme-hue), 53%, 27%);
-		color: hsl(var(--theme-hue), 53%, 94%);
+		background-color: hsl(var(--hue), var(--sat), 27%);
+		color: hsl(var(--hue), var(--sat), 94%);
 		font-size: smaller;
 		& th {
 			position: relative;

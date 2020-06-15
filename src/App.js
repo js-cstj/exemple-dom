@@ -9,6 +9,55 @@ export default class App {
 	 */
 	static main() {
 		document.getElementById("app").appendChild(this.html_stats(stats));
+		this.ajouterCouleurs();
+		this.ajouterDisco();
+		this.ajouterPalette();
+	}
+	static ajouterCouleurs() {
+		var trigger = document.querySelector("table.stats>thead>tr>th:first-child");
+		var table = trigger.closest(".stats");
+		trigger.addEventListener("click", e => {
+			this.changerHue(table);
+		});
+	}
+	static ajouterDisco() {
+		var trigger = document.querySelector("table.stats>thead>tr>th:nth-child(4)");
+		var table = trigger.closest(".stats");
+		var interval = null;
+		trigger.addEventListener("click", e => {
+			if (interval) {
+				window.clearInterval(interval);
+				interval = null;
+			} else {
+				interval = window.setInterval(() => {
+					this.changerHue(table);
+				}, 500);
+			}
+		});
+	}
+	static ajouterPalette() {
+		var trigger = document.querySelector("table.stats>thead>tr>th:nth-child(2)");
+		var table = trigger.closest(".stats");
+		var interval = null;
+		var hue = 0;
+		trigger.addEventListener("click", e => {
+			if (interval) {
+				window.clearInterval(interval);
+				interval = null;
+			} else {
+				interval = window.setInterval(() => {
+					this.changerHue(table, hue);
+					hue += 15;
+					hue %= 360;
+				}, 500);
+			}
+		});
+	}
+	static changerHue(objet, hue) {
+		if (hue === undefined) {
+			hue = Math.floor(Math.random()*24)*15;
+		}
+		objet.style.setProperty("--hue", hue);
 	}
 	static html_stats(stats) {
 		var resultat = document.createElement("table");
