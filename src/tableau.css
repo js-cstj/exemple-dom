@@ -1,0 +1,48 @@
+table.stats {
+  --theme-hue: 30;
+  border-collapse: collapse;
+  background-color: hsl(var(--theme-hue), 53%, 79%);
+}
+
+table.stats, table.stats thead, table.stats tfoot {
+  border: 2px solid hsl(var(--theme-hue), 53%, 27%);
+}
+
+table.stats th, table.stats td {
+  padding: .25em 1ch;
+}
+
+table.stats tbody > tr:nth-child(3n) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+table.stats tbody > tr:nth-child(3n+1) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+table.stats thead {
+  background-color: hsl(var(--theme-hue), 53%, 27%);
+  color: hsl(var(--theme-hue), 53%, 94%);
+  font-size: smaller;
+}
+
+table.stats thead th {
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+table.stats thead th span:last-child {
+  position: absolute;
+  right: 0;
+}
+
+table.stats th[scope=row] {
+  white-space: nowrap;
+}
+/*# sourceMappingURL=tableau.css.map */

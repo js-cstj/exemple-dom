@@ -1,0 +1,40 @@
+
+table.stats {
+	--theme-hue: 30;
+	border-collapse: collapse;
+	background-color: hsl(var(--theme-hue), 53%, 79%);
+	&, thead , tfoot {
+		border: 2px solid hsl(var(--theme-hue), 53%, 27%);
+	}
+	th, td {
+		padding: .25em 1ch;
+		// border: 1px solid hsl(var(--theme-hue), 53%, 27%);
+	}
+	tbody {
+		& > tr:nth-child(3n) {
+			background-color: rgba(0,0,0,.1);
+		}
+		& > tr:nth-child(3n+1) {
+			background-color: rgba(255,255,255,.4);
+		}
+	}
+	thead {
+		background-color: hsl(var(--theme-hue), 53%, 27%);
+		color: hsl(var(--theme-hue), 53%, 94%);
+		font-size: smaller;
+		& th {
+			position: relative;
+			padding-left: 1em;
+			padding-right: 1em;
+			cursor: pointer;
+			user-select: none;
+			span:last-child {
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+	th[scope=row] {
+		white-space: nowrap;
+	}
+}
